@@ -71,6 +71,8 @@ namespace BookStore.Controllers
 
         public ActionResult Search(string term)
         {
+            if (term == null)
+                return View("Index", bookRepository.List()); 
             var result = bookRepository.Search(term);
             return View("Index", result);
         }

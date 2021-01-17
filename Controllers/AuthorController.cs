@@ -103,6 +103,8 @@ namespace BookStore.Controllers
         }
         public ActionResult Search(string term)
         {
+            if (term == null)
+                return View("Index", authorRepository.List());
             var result = authorRepository.Search(term);
             return View("Index", result);
         }
