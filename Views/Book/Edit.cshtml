@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit" enctype="multipart/form-data">
+        <form asp-action="Edit" enctype="multipart/form-data" autocomplete="off">
             @if (ViewBag.Message != null)
             {
                 <h5 class="alert alert-danger">@ViewBag.Message</h5>
