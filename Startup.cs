@@ -32,6 +32,7 @@ namespace BookStore
             services.AddSingleton<IBookStoreRepository<Author>, AuthorRepository>();
             services.AddSingleton<IBookStoreRepository<Book>, BookRepository>();
             */
+
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddScoped<IBookStoreRepository<Author>, AuthorDbRepository>();
             services.AddScoped<IBookStoreRepository<Book>, BookDbRepository>();
@@ -48,6 +49,8 @@ namespace BookStore
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseAuthorization();
+            app.UseAuthentication(); 
             app.UseStaticFiles(); 
             app.UseMvc(route=> {
                 route.MapRoute("default", "{controller=Book}/{action=Index}/{id?}");
