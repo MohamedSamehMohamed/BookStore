@@ -23,11 +23,9 @@ namespace BookStore
 
         private static void RunMigrations(IHost webHost)
         {
-            using(var scope = webHost.Services.CreateScope())
-            {
-                var db = scope.ServiceProvider.GetRequiredService<BookStoreDbContext>();
-                db.Database.Migrate();
-            }
+            using var scope = webHost.Services.CreateScope();
+            var db = scope.ServiceProvider.GetRequiredService<BookStoreDbContext>();
+            db.Database.Migrate();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
