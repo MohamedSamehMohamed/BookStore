@@ -53,7 +53,7 @@ namespace BookStore
             app.UseAuthentication(); 
             app.UseStaticFiles(); 
             app.UseMvc(route=> {
-                route.MapRoute("default", "{controller=Book}/{action=Index}/{id?}");
+                route.MapRoute("default", "{controller=Author}/{action=Index}/{id?}");
             });
         }
     }
