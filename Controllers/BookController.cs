@@ -126,7 +126,7 @@ namespace BookStore.Controllers
             }
             catch
             {
-                ViewBag.Massage = "Error Occured";
+                ViewBag.Message = "Error Occured";
                 return Delete(id); 
             }
         }

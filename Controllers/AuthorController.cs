@@ -50,7 +50,7 @@ namespace BookStore.Controllers
             }
             catch
             {
-                ViewBag.Massaeg = "Error Ocured"; 
+                ViewBag.Message = "Error Ocured"; 
                 return View();
             }
         }
@@ -65,7 +65,7 @@ namespace BookStore.Controllers
         // POST: AuthorController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, Author author)
+        public ActionResult Edit(Author author)
         {
             try
             {
@@ -74,8 +74,8 @@ namespace BookStore.Controllers
             }
             catch
             {
-                ViewBag.Massaeg = "Error Ocured";
-                return Edit(id);
+                ViewBag.Message = "Error Ocured";
+                return Edit(author.Id);
             }
         }
 
@@ -99,8 +99,8 @@ namespace BookStore.Controllers
             }
             catch
             {
-                ViewBag.Massage = "Error Ocured"; 
-                return Delete(id);
+                ViewBag.Message = "Error Ocured";
+                return RedirectToAction(nameof(Index));
             }
         }
         public ActionResult Search(string term)

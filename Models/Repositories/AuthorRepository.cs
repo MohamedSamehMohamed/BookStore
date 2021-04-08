@@ -26,7 +26,7 @@ namespace BookStore.Models.Repositories
         public void Delete(int Id)
         {
             Author author = Find(Id);
-            Authors.Remove(author); 
+            Authors.Remove(author);
         }
 
         public Author Find(int Id)
